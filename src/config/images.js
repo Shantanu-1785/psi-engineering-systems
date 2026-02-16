@@ -13,6 +13,22 @@ export const images = {
   // Featured Products Section - Equipment Images
   whoWeAre: "/images/WhoWeAre.png",
   ourStrength: "/images/OurStrenght.png",
+  aboutUsImage: "/images/AboutUs/AboutUs.png",
+  aboutUsHeader: "/images/AboutUs/AboutUs_Header.png",
+  
+  // Engineering Services Images
+  engineeringDesign: "/images/AboutUs/Engineering Services/Engineering & Design Services.png",
+  systemEngineering: "/images/AboutUs/Engineering Services/System Engineering Fluid Handling.png",
+  documentation: "/images/AboutUs/Engineering Services/Documentation & Drafting Services.png",
+  analysisValidation: "/images/AboutUs/Engineering Services/Analysis & Validation Services.png",
+  
+  // Quality Certifications
+  certificationUKAS: "/images/AboutUs/UKAS.png",
+  certificationNABCB: "/images/AboutUs/NABCB.png",
+  certificationISO: "/images/AboutUs/ISO9001.png",
+  
+  // Quality Environment Background
+  qualityEnvironmentBg: "/images/AboutUs/Quality-Environment.png",
   
   // Featured Products
   dosingSystem: "/images/Featured Products/DosingSystem.png",

@@ -1,11 +1,14 @@
 import { ClientsSection } from "./ClientsSection";
 import { FeaturedProductsSection } from "./FeaturedProductsSection";
-import { FooterSection } from "./FooterSection";
+import { Footer } from "./Footer";
 import { HeaderSection } from "./HeaderSection";
 import { WelcomeSection } from "./WelcomeSection";
 import { images } from "../config/images";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 export const Homepage = () => {
+  useScrollReveal();
+  
   const featuredProducts = [
     {
       id: 1,
@@ -55,8 +58,8 @@ export const Homepage = () => {
 
       {/* Clients Section with Yellow Background */}
       <section className="bg-[#eec755] py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto">
+          <div className="scroll-reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4 sm:px-6 lg:px-8">
             <ClientsSection />
             
             {/* Industrial Equipment Image */}
@@ -73,7 +76,7 @@ export const Homepage = () => {
           <div className="w-full h-0.5 bg-dash-colour mt-16 mb-12" />
 
           {/* Client Logos Carousel - Continuous Horizontal Scroll */}
-          <div className="mt-16 overflow-hidden">
+          <div className="scroll-reveal mt-16 overflow-hidden">
             <div className="flex animate-scroll gap-6">
               {/* First set of logos */}
               {[
@@ -141,57 +144,7 @@ export const Homepage = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="bg-[#0e0e0e] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Company Info */}
-            <div className="lg:col-span-1">
-              <div className="w-full max-w-sm h-28 rounded flex items-center justify-center mb-6 overflow-hidden">
-                <img 
-                  src={images.companyLogo} 
-                  alt="PSI Engineering Systems"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                We design and deliver reliable auxiliary systems for oil & gas,
-                power, and process industries—ensuring efficiency, safety, and
-                uninterrupted operations across every stage of your plant.
-              </p>
-              
-              {/* Social Icons */}
-              <div className="flex space-x-4">
-                {[
-                  { name: 'Facebook', image: images.socialFacebook },
-                  { name: 'Twitter', image: images.socialTwitter },
-                  { name: 'LinkedIn', image: images.socialLinkedIn },
-                  { name: 'YouTube', image: images.socialYouTube },
-                ].map((social) => (
-                  <div key={social.name} className="w-12 h-12 rounded-full overflow-hidden hover:scale-110 transition-transform cursor-pointer">
-                    <img 
-                      src={social.image} 
-                      alt={social.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Footer Navigation */}
-            <div className="lg:col-span-2">
-              <FooterSection />
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-gray-600 mt-12 pt-8">
-            <p className="text-center text-gray-400 text-lg">
-              © Copyright ©2025 PSI. All Rights Reserved Copyright
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

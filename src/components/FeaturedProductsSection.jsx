@@ -30,7 +30,7 @@ export const FeaturedProductsSection = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h1 className="text-left text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-8 font-fustat">
+        <h1 className="scroll-reveal text-left text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-8 font-fustat">
           <span className="text-black">Welcome To, </span>
           <span className="text-[#fbcc00]">PSI Engineering</span>
           <span className="text-black"> </span>
@@ -38,11 +38,11 @@ export const FeaturedProductsSection = () => {
         </h1>
 
         {/* Divider Line */}
-        <div className="w-full h-0.5 bg-gray-300 mb-16" />
+        <div className="scroll-reveal w-full h-0.5 bg-gray-300 mb-16" />
 
         <div className="space-y-24">
           {/* Who We Are Section */}
-          <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <article className="scroll-reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
             <div className="relative order-2 lg:order-1">
               <div className="w-full aspect-[4/3] rounded-lg overflow-hidden">
@@ -74,7 +74,7 @@ export const FeaturedProductsSection = () => {
           </article>
 
           {/* Our Strengths Section */}
-          <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <article className="scroll-reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-black mb-6 font-inter">
@@ -106,7 +106,7 @@ export const FeaturedProductsSection = () => {
           </article>
 
           {/* Featured Products Gallery Section */}
-          <article className="mt-24">
+          <article className="scroll-reveal mt-24">
             <h2 className="text-[60px] font-extrabold text-black mb-6 text-left font-fustat">
               <span className="text-black">Featured </span>
               <span className="text-[#fbcc00]">Products</span>

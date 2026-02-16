@@ -1,16 +1,18 @@
 import { images } from "../config/images";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export const HeaderSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const navigationItems = [
-    { label: "Home" },
-    { label: "About Us" },
-    { label: "Products" },
-    { label: "Clientele" },
-    { label: "Contact Us" },
+    { label: "Home", path: "/" },
+    { label: "About Us", path: "/about-us" },
+    { label: "Products", path: "/#products" },
+    { label: "Clientele", path: "/#clientele" },
+    { label: "Contact Us", path: "/#contact" },
   ];
 
   useEffect(() => {
@@ -43,13 +45,23 @@ export const HeaderSection = () => {
             <div className="flex items-center justify-between bg-white/15 backdrop-blur-md rounded-full px-8 py-2.5 border border-white/25 shadow-lg">
               <nav className="flex space-x-16" role="navigation" aria-label="Main navigation">
                 {navigationItems.map((item, index) => (
-                  <a
-                    key={index}
-                    href={`#${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-white font-medium text-sm font-inter hover:text-[#fbcc00] transition-colors duration-300 whitespace-nowrap"
-                  >
-                    {item.label}
-                  </a>
+                  item.path.startsWith('/#') ? (
+                    <a
+                      key={index}
+                      href={item.path}
+                      className="text-white font-medium text-sm font-inter hover:text-[#fbcc00] transition-colors duration-300 whitespace-nowrap"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={index}
+                      to={item.path}
+                      className="text-white font-medium text-sm font-inter hover:text-[#fbcc00] transition-colors duration-300 whitespace-nowrap"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
               </nav>
               
@@ -85,14 +97,25 @@ export const HeaderSection = () => {
           <div className="lg:hidden mt-3 bg-white/15 backdrop-blur-md rounded-2xl p-3 border border-white/25 absolute left-2 right-2 z-20">
             <nav className="flex flex-col space-y-2" role="navigation" aria-label="Mobile navigation">
               {navigationItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-white font-medium text-sm font-inter hover:text-[#fbcc00] transition-colors duration-300 py-1.5"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                item.path.startsWith('/#') ? (
+                  <a
+                    key={index}
+                    href={item.path}
+                    className="text-white font-medium text-sm font-inter hover:text-[#fbcc00] transition-colors duration-300 py-1.5"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className="text-white font-medium text-sm font-inter hover:text-[#fbcc00] transition-colors duration-300 py-1.5"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
               {/* Mobile Login Button */}
               <a
