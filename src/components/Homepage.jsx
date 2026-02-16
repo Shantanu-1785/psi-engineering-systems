@@ -8,34 +8,6 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 
 export const Homepage = () => {
   useScrollReveal();
-  
-  const featuredProducts = [
-    {
-      id: 1,
-      title: "Dosing System",
-      image: images.dosingSystem,
-    },
-    {
-      id: 2,
-      title: "Seal auxiliary systems",
-      image: images.sealAuxiliary,
-    },
-    {
-      id: 3,
-      title: "Control & Instrumentation",
-      image: images.controlInstrumentation,
-    },
-    {
-      id: 4,
-      title: "Lube Oil Systems",
-      image: images.lubeOilSystems,
-    },
-    {
-      id: 5,
-      title: "Fuel Oil Systems",
-      image: images.fuelOilSystems,
-    },
-  ];
 
   return (
     <div className="bg-white w-full">

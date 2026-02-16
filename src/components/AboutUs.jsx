@@ -60,16 +60,6 @@ export const AboutUs = () => {
     "Stage-wise inspections with 100% testing before product dispatch",
   ];
 
-  const advantages = [
-    "Extensive engineering resources",
-    "Highly qualified engineering staff",
-    "Strict quality control procedures",
-    "Consistently high product quality",
-    "Short production lead times",
-    "Competitive pricings",
-    "Continuous product support",
-  ];
-
   return (
     <div className="bg-white w-full min-h-screen">
       {/* Hero Section */}

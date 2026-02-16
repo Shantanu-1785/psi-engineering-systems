@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 export const HeaderSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
 
   const navigationItems = [
     { label: "Home", path: "/" },
